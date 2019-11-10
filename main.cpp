@@ -26,7 +26,9 @@ void printMenu(char* map){
 }
 
 bool isUsed(char* map, int x, int y, char symb){
-    //  Checks first row for empty space, if so assign space to player symbol and return false
+    // Function checks input is an empty space on array, if so assign space to player symbol and return false
+    
+    //  Checks first row
     if(x == 1 && y == 1 and map[0] == ' ') {
         map[0] = symb;
         return false;
@@ -40,7 +42,7 @@ bool isUsed(char* map, int x, int y, char symb){
         return false;
     }
     
-    //  Checks second row for empty space, if so assign space to player symbol and return false
+    //  Checks second row 
     if(x == 2 && y == 1 and map[3] == ' ' ) {
         map[3] = symb;
         return false;
@@ -55,7 +57,7 @@ bool isUsed(char* map, int x, int y, char symb){
         return false;
     }
     
-    //  Checks third row for empty space, if so assign space to player symbol and return false
+    //  Checks third row 
     if(x == 3 && y == 1 and map[6] == ' ' ) {
         map[6] = symb;
         return false;
@@ -135,7 +137,7 @@ int main(int argc, const char * argv[]) {
             x = 0;
             y = 0;
             user_input(x, y);                                 //  Asks user for input
-        }while(isUsed(map, x, y, 'X'));                      // if input has been previosly been made, loop to ask again
+        }while(isUsed(map, x, y, 'X'));                      // if input has previosly been made, loop to ask again
     
         printMenu(map);
         if(checkWin(map, 'X')){
@@ -149,7 +151,7 @@ int main(int argc, const char * argv[]) {
             x = 0;
             y = 0;
             user_input(x, y);                               //  Asks user for input
-        }while(isUsed(map, x, y, 'Y'));                     // if input has been previosly been made, loop to ask again
+        }while(isUsed(map, x, y, 'O'));                     // if input has previosly been made, loop to ask again
 
         printMenu(map);
         if(checkWin(map, 'O')){
